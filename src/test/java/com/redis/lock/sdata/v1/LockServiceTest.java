@@ -11,8 +11,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.redis.base.SpringBaseTest;
-import com.redis.lock.sdata.v1.LockKeyUtils;
-import com.redis.lock.sdata.v1.LockService;
+import com.redis.lock.util.LockKeyUtils;
 
 /**
  * Created by langshiquan on 2018/8/16.

@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
  */
-package com.redis.lock.sdata.v1;
+package com.redis.lock.util;
 
 /**
  * Created by langshiquan on 2018/8/16.
