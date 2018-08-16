@@ -26,7 +26,7 @@ public class SimpleSpringTest {
     ApplicationContext applicationContext;
 
     @Autowired
-    RedisTemplate redisTemplate;
+    RedisTemplate<String, String> redisTemplate;
 
     @Autowired
     StringRedisTemplate stringRedisTemplate;
@@ -45,6 +45,7 @@ public class SimpleSpringTest {
 
     @Test
     public void testRedisTemplate() throws Exception {
+        // 不设置范型无效
         redisTemplate.opsForValue().set("key1", "value1");
         Assert.assertEquals("value1", redisTemplate.opsForValue().get("key1"));
     }
