@@ -21,15 +21,15 @@ public class LockService {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    public UUID tryLock(String lockKey) throws InterruptedException {
-        return tryLock(lockKey, DEFAULT_ACQUIRE_RESOLUTION_MILLIS, DEFAULT_LOCK_TIMEOUT);
+    public UUID acquire(String lockKey) throws InterruptedException {
+        return acquire(lockKey, DEFAULT_ACQUIRE_RESOLUTION_MILLIS, DEFAULT_LOCK_TIMEOUT);
     }
 
-    public UUID tryLock(String lockKey, long acquireTimeoutInMillis) throws InterruptedException {
-        return tryLock(lockKey, acquireTimeoutInMillis, DEFAULT_LOCK_TIMEOUT);
+    public UUID acquire(String lockKey, long acquireTimeoutInMillis) throws InterruptedException {
+        return acquire(lockKey, acquireTimeoutInMillis, DEFAULT_LOCK_TIMEOUT);
     }
 
-    public UUID tryLock(String lockKey, long acquireTimeoutInMillis, long lockExpiryInMillis)
+    public UUID acquire(String lockKey, long acquireTimeoutInMillis, long lockExpiryInMillis)
             throws InterruptedException {
         UUID uuid = UUID.randomUUID();
         long timeout = 0L;
